@@ -65,8 +65,13 @@ body{
 
 .navigation-bar {
     width: 100%;  /* i'm assuming full width */
-    height: 80px; /* change it to desired width */
+    height: 150px; /* change it to desired width */
     background-color: white; /* change to desired color */
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    z-index: 50;
+    transition: .2s;
 }
 .logo {
     display: inline-block;
@@ -84,12 +89,35 @@ body{
     line-height: 80px;    /* if you want it vertically middle of the navbar */
 }
 
+.navigation-bar > a:hover {
+    color: black;
+}
 
 /* --showcase-- */
 
 
-
-.head-image{
+.head-image {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: 25%;
+    height: 50px;
+}
+
+.head-image #image-text-head {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    width: 90%;
+    color:white;
+    
+}
+
+
+.head-image img{
+    width: 100%;
+        
 }
