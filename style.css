@@ -80,6 +80,7 @@ body{
     height: 120px;
     margin-right: 20px;
     margin-top: 15px;    /* if you want it vertically middle of the navbar. */
+    margin-bottom: 10px;
 }
 .head-list {
     display: inline-block;
@@ -106,11 +107,9 @@ body{
 
 /* --showcase-- */
 
-
-
 .head-image {
     position: relative;
-    top: 150px;
+    margin-top: 25px;
     width: 100%;
     height: 300px;
   
@@ -139,30 +138,60 @@ body{
 
 
 .head-image img{
-    width: 100%;
-        
+    width: 100%; /* need to specify width of the image  */ 
+    height: 450px;   /* need to specify height of the image  */  
 }
 
 
 /* --featured product-- */
 
 .featured {
-    max-width: 1200px;
+    margin: 15px;
+}
+
+.featured h3 {
+    font-size: 1.7em;
+    font-weight: 600;
+    margin-top: 200px;
+    text-align: center;
+    line-height: 2em;
+    margin-bottom: 25px;
+}
+
+.featured-product {
+    max-width: 1150px;
     margin:auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left:25px;
+    padding-right:25px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}   
+
+.col-3 {
+    flex-basis:30%;
+    min-width: 250px;
+    margin-bottom: 30px;
 }
 
 
-.col-4 {
-    flex-basis: 25%;
-    padding: 15px;
-    min-width: 200px;
-    margin-bottom: 50px;
-    transition: transform 0.6s;
+.col-3 img {
+    width: 320px;
+    height: 320px;
 }
 
-.featured-product img {
-    width: 240px;
-    height: 240px;
+.col-3 h4{
+    padding:10px;
+    margin:10px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 400;
 }
+
+
+/* showcase-buttom */
+
