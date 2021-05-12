@@ -259,3 +259,83 @@ hr{
     line-height: 1.5em;
     font-weight: 600;
 } 
+
+
+/* footer-section */
+
+.connect-container{
+    display: flex;
+    margin: 100px 0 0px;
+    padding: 20px;
+    background: rgb(176,235,230);
+    background: radial-gradient(circle, rgba(176,235,230,1) 0%, rgba(243,245,250,1) 100%);
+    line-height: 30px;
+}
+
+.address{
+    margin-right: 20px;
+}
+
+.address h3{
+    font-size:1.6em;
+    padding: 10px;
+    margin-bottom: 4px;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
+
+.address p{
+    font-size:1.1em;
+    padding: 10px;
+    margin-bottom: 8px;
+
+}
+
+.icon-type{
+   margin:7px;
+}
+
+.icon-type i{
+    margin-right: 5px;
+    color: rgb(53, 125, 134);
+}
+
+.icon-type span{
+    font-size: 1em;
+}
+
+
+.follow {
+    margin-left: 40px;
+}
+
+.follow  h3{
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.social li{
+    display: inline-block;
+    filter: contrast(120%);
+    margin-right: 20px;
+    margin-left: 40px;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+
+.social li:hover {
+    transform: scale(0.9) translateY(-15px);
+}
+
+
+.signature {
+    text-align: center;
+    padding: 10px;
+    font-size:0.9em;
+}
+
+.signature a{
+    color:black;
+}
