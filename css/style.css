@@ -63,77 +63,170 @@ body{
 
 /* --navbar-- */
 
-.navigation-bar {
-    width: 100%;  /* i'm assuming full width */
-    height: 140px; /* change it to desired width */
-    background-color: white; /* change to desired color */
+.header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
-    overflow: hidden;
-    top: 0;
-    z-index: 50;
+    width: 100%;
+    z-index: 3;
+    padding: 10px;
+    top:-20px;
     transition: 0.3s ease-in-out;
-}
-.logo {
-    display: inline-block;
-    vertical-align: top;
-    width: 110px;
-    height: 100px;
-    margin-right: 20px;
-    margin-top: 15px;    /* if you want it vertically middle of the navbar. */
-    margin-bottom: 10px;
-    margin-left: 20px;
-    padding: 8px;
-}
-.head-list {
+  }
+  
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .header li a {
     display: block;
-    margin-right: 50px;
-    height: 80px;        /* if you want it to take the full height of the bar */
-    line-height: 80px;    /* if you want it vertically middle of the navbar */
-    float: right;
-    margin-top: 25px;
-    
-}
-
-.head-list a {
-    margin-left: 25px;
-    font-size: 1.2em;
-    box-shadow: 1px 3px 3px rgb(114, 109, 182);
-    padding: 5px;
-    border-radius: 5px;
-    color:black;
-    padding:8px;
-}
-
-.head-list > a:hover {
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
     color: black;
-    background-color: #dae1f5;
-    
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-family: 'Kumbh Sans', sans-serif;
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+  
+  .header .logo {
+    display: block;
+    float: left;
+    padding: 10px 20px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    margin-top:25px;
+    margin-right: 15px;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    margin: 15px;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  /* 48em = 768px */
+    /* 55em = 880px */
+  
+  @media (min-width: 55em) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 30px 30px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+
+  .nav-active {
+    background-color:#fff;
+    box-shadow: 5px -1px 12px -5px grey;
+    padding: 2px;
 }
 
 
- .nav-active {
-    background-color:#fff;
-    box-shadow: 5px -1px 12px -5px grey; 
-    margin: -15px 0;
-    line-height: 1px;
-    height: 130px;
-    font-size:0.9em;
-} 
 
-
-
-
-
-/* --showcase-- */
+/* --SHOWCASE-- */
 
 .head-image {
     position: relative;
     margin-top: 25px;
     width: 100%;
-    height: 300px;
     opacity: 0.9;
-  
+    height: auto;
 }
+
+  @media (max-width: 900px) {
+  .head-image img {
+    min-height: 300px;
+    object-fit: cover;
+  }
+}  
 
 .head-image-text {
   position: absolute;
@@ -148,19 +241,31 @@ body{
 }
 
 .head-image-text h2{
-    font-size: 4em;
+    font-size: 4vw;
     margin-bottom: 15px;
    }
 
 .head-image-text p{
-   font-size: 1.4em;
+   font-size: 2vw;
   }
+
+  @media (max-width: 750px) {
+    .head-image-text h2 {
+      font-size: 5vw;
+    }
+
+    .head-image-text p {
+      font-size: 2.5vw;
+    } 
+
+  }  
 
 
 .head-image img{
-    width: 100%; /* need to specify width of the image  */ 
-    height: 450px;   /* need to specify height of the image  */  
+    width: 100%; /* need to specify width of the image  */  
+    margin-top: 40px;
 }
+
 
 
 /* --featured product-- */
@@ -171,11 +276,19 @@ body{
 
 .featured h3 {
     font-size: 1.7em;
-    font-weight: 600;
-    margin-top: 200px;
+    font-weight: 500;
+    margin-top: 50px;
     text-align: center;
     line-height: 2em;
-    margin-bottom: 25px;
+    letter-spacing: 2px;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.featured hr {
+  min-width: 100px;
+  max-width: 500px;
+  width: 50%;
+  margin: 10px auto 30px;
 }
 
 .featured-product {
@@ -196,21 +309,31 @@ body{
     flex-basis:30%;
     min-width: 250px;
     margin-bottom: 30px;
+    width: 100%;
+    padding: 12px;
+}
+
+.col-3:hover {
+  cursor: pointer;
+  border: 3px solid rgb(205, 235, 245, 0.8);
+  border-radius: 8px;
+  border-spacing: 20px;
 }
 
 
 .col-3 img {
-    width: 320px;
-    height: 320px;
+    width: 100%;
+    margin: auto;
 }
 
 .col-3 h4{
     padding:10px;
     margin:10px;
     text-align: center;
-    font-size: 1.1em;
-    font-weight: 400;
+    font-size: 1.2em;
+    font-weight: 500;
 }
+
 
 
 /* showcase-buttom */
@@ -663,12 +786,12 @@ textarea{
   
   
   
-  header {
+  .product-header {
     text-align: center;
     margin: 40px 0;
   }
   
-  header h2 {
+  .product-header h2 {
     color: #000000;
     font-weight: 400;
     font-size: 35px;
@@ -676,22 +799,22 @@ textarea{
     padding:13px;
   }
 
-    header #P {
+  .product-header #P {
         background: rgb(255,255,255);
         background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(235,228,195,1) 70%, rgba(243,245,250,1) 100%);
   }
 
-    header #Z {
+  .product-header #Z {
         background: rgb(255,255,255);
         background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(8,57,4,0.7455357142857143) 70%, rgba(243,245,250,1) 100%);
 }
 
-    header #B {
+  .product-header #B {
         background: rgb(255,252,252);
-background: linear-gradient(90deg, rgba(255,252,252,1) 0%, rgba(235,175,76,1) 66%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(90deg, rgba(255,252,252,1) 0%, rgba(235,175,76,1) 66%, rgba(255,255,255,1) 100%);
 }
 
-    header #R {
+  .product-header #R {
         background: rgb(255,252,252);
         background: linear-gradient(90deg, rgba(255,252,252,1) 0%, rgba(163,55,28,0.835171568627451) 66%, rgba(255,255,255,1) 100%);
 }

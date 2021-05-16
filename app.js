@@ -1,15 +1,11 @@
 
 /* --navigation bar-- */
 
-const navbar = document.querySelector('.navigation-bar');
+const navbar = document.querySelector('.header');
 window.onscroll = () => {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 200) {
         navbar.classList.add('nav-active');
-        navbar.classList.add('items-active');
     } else {
         navbar.classList.remove('nav-active');
-        navbar.classList.remove('items-active');
     }
 }; 
-
-
